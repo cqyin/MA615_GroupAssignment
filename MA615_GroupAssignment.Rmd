@@ -1,0 +1,17 @@
+---
+title: "MA615_GroupAssignment"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+library(readxl)
+Onions <- read.csv("Data.csv")
+View(Data)
+```
+
