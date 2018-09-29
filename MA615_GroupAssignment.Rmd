@@ -12,6 +12,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```{r}
 library(readxl)
 Onions <- read.csv("Data.csv")
-View(Data)
+summary(Onions)
+head(Onions)
 ```
 
