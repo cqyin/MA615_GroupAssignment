@@ -69,6 +69,8 @@ ggplot(Finance3,aes(x = Year.Month,y = Total_Count,fill = State))+
   labs(title = "Bingqing Yu")
 ```
 
+The count of frauds reported increased largely through the last few years. Since the data of 2018 is not complete yet, we may still predict a trend of growth. California and New York are typically among the top five States that most frauds were reported. Massachusetts ranked first in 2013 and 2014, but ended with fifth in 2015, 2016 and 2017.
+
 ### Industry
 ```{r}
 Finance %>% group_by(Year.Month,Industry)  %>%  
@@ -96,6 +98,7 @@ ggplot(Finance.ind,aes(x = Year.Month , Count ,fill = Industry)) +
   coord_polar(theta = "x") +
   labs(title = "Mira Tang")
 ```
+
 We can know from the plot that MSB is the most frequent industry reported securities/futures suspicious activity in each year. Although insurance company's suspicious activities happend a lot in 2012, it decreased by year.
 
 ### Susicious Activities
@@ -124,6 +127,7 @@ ggplot(suspicion, aes(x = Year, y = Count, fill = Suspicious.Activity)) +
   geom_col(position = "stack") +
   labs(title = "Kecheng Liang")
 ```
+
 The graph shows that we should pay more attetion on wire, credit/debit card, and check.
 
 ### Regulator
