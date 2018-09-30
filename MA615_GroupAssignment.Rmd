@@ -9,10 +9,31 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
+Onion data
 ```{r}
 library(readxl)
 Onions <- read.csv("Data.csv")
+Onions$Week.Ending <-NULL
+Onions$State.ANSI <-NULL
+Onions$Ag.District <-NULL
+Onions$Ag.District.Code <-NULL
+Onions$County <-NULL
+Onions$County.ANSI <-NULL
+Onions$Zip.Code <-NULL
+Onions$Region <-NULL
+Onions$Watershed <-NULL
+Onions$watershed_code <-NULL
+Onions$Week.Ending <-NULL
+View(Onions)
 summary(Onions)
 head(Onions)
 ```
 
+Finance data
+```{r}
+library(readxl)
+Finance <- read.csv("SARStats.csv")
+View(Finance)
+summary(Finance)
+head(Finance)
+```
