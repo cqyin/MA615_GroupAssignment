@@ -195,14 +195,7 @@ Finance$Count &lt;- as.numeric(Finance$Count)</code></pre>
   group_by(Year,State) %&gt;% 
   summarise(State_Total_Count = sum(as.numeric(Count)))-&gt; State1
 
-library(ggplot2)
-library(maps)</code></pre>
-<pre><code>## 
-## Attaching package: 'maps'</code></pre>
-<pre><code>## The following object is masked from 'package:purrr':
-## 
-##     map</code></pre>
-<pre class="r"><code>#load us map data
+#load us map data
 all_states &lt;- map_data(&quot;state&quot;)
 
 #mutate the count data into map data
