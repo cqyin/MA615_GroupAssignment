@@ -10,10 +10,7 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(knitr)
-library(tidyverse)
-library(readxl)
-library(kableExtra)
+pacman::p_load("knitr","tidyverse","readxl","kableExtra","ggplot2","maps","plotly")
 ```
 
 We got the dataset from the [Suspicious Activities Report statistics](https://www.fincen.gov/reports/sar-stats) tool. After filtering specific industries (Insurance Company, Loan or Finance Company, Money Services BUsiness and Securities/Futures) and suspicious activities(Fraud), we got a dataset with 43454 observations of 8 variables. Looking into the data, we found that observations with "[Total]" entries were summarized data that should be seprated from raw data, so we removed those entires and ended with 23890 observations.
@@ -52,8 +49,6 @@ Finance %>%
   group_by(Year,State) %>% 
   summarise(State_Total_Count = sum(as.numeric(Count)))-> State1
 
-library(ggplot2)
-library(maps)
 #load us map data
 all_states <- map_data("state")
 
@@ -118,8 +113,19 @@ Finance %>% group_by(Year,Industry)  %>%
   arrange(Year,desc(Count)) -> Finance.ind
 ```
 
+First of all, we can see how count change with year and industry through the contour plot.
+```{r}
+plot_ly(
+  x = Finance.ind$Year, 
+  y = Finance.ind$Industry, 
+  z = Finance.ind$Count, 
+  type = "contour" 
+)
+```
+
 #### Make a table
 ```{r}
+#table grouped by year
 kable(Finance.ind[,c(2,3)], caption = "Securities/Futures Suspicious Activity Reports by Industry" , "html" ) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
   group_rows("2012", 1, 3) %>%
