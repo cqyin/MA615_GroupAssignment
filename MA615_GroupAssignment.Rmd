@@ -207,7 +207,7 @@ ggplot(regulator , aes(x = Year,y = Count,fill = Regulator)) +
 
 From the plot, the fraud cases charged by IRS increase greatly from 2012 to 2016. Then in 2016, the fraud cases charged by IRS get to the peek then the numbers started to decrease. Among all the data points in the plot, the most financial criminal cases are handled by IRS and SEC during the 7 years.
 
-##Conclusion
+## Conclusion
 * As for the numbers of fraud cases in different states:
 
 From the map plot and boxplot, we can compare the numbers of fraud cases in different states from 2012 to 2018 easily. From 2012 to 2017, the total number of fraud cases has a obvious trend of increasing.Then, the count of frauds reported increased largely through the last few years. Since the data of 2018 has not been complete yet, we may still predict a trend of growth. California and New York were typically among the top five States that most frauds were reported. Massachusetts ranked first in 2013 and 2014, but ended with fifth in 2015, 2016 and 2017.
