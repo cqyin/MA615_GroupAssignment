@@ -74,6 +74,7 @@ ggplot(State1, aes(x=Year, y=State_Total_Count))+
   geom_boxplot()+
   coord_flip()
 ```
+
 From the boxplot, we can compare the numbers of fraud cases from 2012 to 2018 easily. From 2012 to 2017, the total number of fraud cases has a obvious trend of increasing. 
 
 
@@ -158,7 +159,7 @@ suspicion %>%
   group_by(Year, Suspicious.Activity) %>%
   summarize(Count = sum(Count)) %>%
   arrange(Year, desc(Count)) %>%
-  slice(1:5) -> sus.table
+  slice(1:3) -> sus.table
 ```
 
 #### Make a table
